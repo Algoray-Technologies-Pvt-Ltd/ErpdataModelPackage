@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'GeneralVoucherDataModel.dart';
+part of 'datamodelpackage.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
