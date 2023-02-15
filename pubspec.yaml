@@ -1,5 +1,5 @@
 name: datamodelpackage
-description: A new Flutter package project.
+description: package project.
 version: 0.0.1
 homepage:
 
@@ -10,6 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  equatable: ^2.0.5
+  uuid: ^3.0.7
+  hive: ^2.2.3
 
 dev_dependencies:
   flutter_test:
