@@ -205,11 +205,11 @@ class GeneralVoucherDataModel extends HiveObject with EquatableMixin {
   final int? currencyDecimalPoint;
   @HiveField(94)
   final bool? isCoupled;
-  @HiveField(94)
-  final ShippingDetailDataModel? shippingInfo;
   @HiveField(95)
-  final SaveStatus saveStatus;
+  final ShippingDetailDataModel? shippingInfo;
   @HiveField(96)
+  final SaveStatus saveStatus;
+  @HiveField(97)
   final int? CreditPeriod;
   GeneralVoucherDataModel({
     this.DisplayVoucherNumber,
