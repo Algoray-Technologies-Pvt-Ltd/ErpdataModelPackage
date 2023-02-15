@@ -1,35 +1,59 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-
-class BatchDataModel extends Equatable {
+import 'package:hive/hive.dart';
+part 'BatchDataModel.g.dart';
+@HiveType(typeId: 1)
+class BatchDataModel extends HiveObject with EquatableMixin {
+  @HiveField(0)
   final String? itemID;
+  @HiveField(1)
   final String? itemReqId;
+  @HiveField(2)
   final String? SKUID;
+  @HiveField(3)
   final String? batchNo;
+  @HiveField(4)
   final String? batchName;
+  @HiveField(5)
   final String? serialNoFrom;
+  @HiveField(6)
   final String? serialNoTo;
+  @HiveField(7)
   final String? serialSuffix;
+  @HiveField(8)
   final String? serialPrefix;
-
+  @HiveField(9)
   final String? VoucherNo;
+  @HiveField(10)
   final String? VoucherType;
+  @HiveField(11)
   final String? VoucherPrefix;
+  @HiveField(12)
   final String? RefNo;
+  @HiveField(13)
   final String? RefType;
+  @HiveField(14)
   final String? RefPrefix;
+  @HiveField(15)
   final DateTime? voucherDate;
-
+  @HiveField(16)
   final DateTime? MfgDate;
+  @HiveField(17)
   final DateTime? ExpiryDate;
+  @HiveField(18)
   final String? shelfLife;
+  @HiveField(19)
   final double? purchaseCost;
+  @HiveField(20)
   final double? sellingPrice;
-
+  @HiveField(21)
   final double? crQty;
+  @HiveField(22)
   final double? drQty;
+  @HiveField(23)
   final String? uom;
+  @HiveField(24)
   BatchDataModel({
     this.itemID,
     this.itemReqId,

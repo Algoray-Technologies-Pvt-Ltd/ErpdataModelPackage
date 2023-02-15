@@ -1,17 +1,30 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'BOMDataModel.g.dart';
 
-class BOMDataModel extends Equatable {
+@HiveType(typeId: 3)
+class BOMDataModel extends HiveObject with EquatableMixin {
+  @HiveField(0)
   final String? SalesItem;
+  @HiveField(1)
   final double? SalesItemQty;
+  @HiveField(2)
   final String? PurchaseItem;
+  @HiveField(3)
   final String? PurchaseItemName;
+  @HiveField(4)
   final double? PurchaseItemQty;
+  @HiveField(5)
   final String? PurchaseUom;
+  @HiveField(6)
   final double? conValue;
+  @HiveField(7)
   final String? purchaseItemSection;
+  @HiveField(8)
   final String? RouteID;
+  @HiveField(9)
   final double? pRate;
   BOMDataModel({
     this.SalesItem,

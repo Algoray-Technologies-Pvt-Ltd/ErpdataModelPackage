@@ -1,35 +1,66 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'ChequeDetailModel.g.dart';
 
-class ChequeDetailModel extends Equatable {
+@HiveType(typeId: 4)
+class ChequeDetailModel extends HiveObject with EquatableMixin {
+  @HiveField(1)
   final String? id;
+  @HiveField(2)
   final String? LedgerName;
+  @HiveField(3)
   final String? LedgerID;
+  @HiveField(4)
   final String? OurBankId;
+  @HiveField(5)
   final String? BankID;
+  @HiveField(6)
   final String? BankName;
+  @HiveField(7)
   final String? TransactionType;
+  @HiveField(8)
   final double? Amount = 0;
+  @HiveField(9)
   final double? crAmount = 0;
+  @HiveField(10)
   final double? drAmount = 0;
+  @HiveField(11)
   final String? ChequeNo;
+  @HiveField(12)
   final String? VoucherID;
+  @HiveField(13)
   final String? VoucherType;
+  @HiveField(14)
   final String? VoucherPrefix;
+  @HiveField(15)
   final DateTime? IssuedOn;
+  @HiveField(16)
   final String? Branch;
+  @HiveField(17)
   final String? IFSC;
+  @HiveField(18)
   final DateTime? InstrumentDate;
+  @HiveField(19)
   final String? RefNumber;
+  @HiveField(20)
   final bool? reconciled;
+  @HiveField(21)
   final DateTime? reconciledDate;
+  @HiveField(22)
   final bool? isPresented;
+  @HiveField(23)
   final DateTime? presentedOn;
+  @HiveField(24)
   final bool? isCleared;
+  @HiveField(25)
   final DateTime? clearedOn;
+  @HiveField(26)
   final bool? isRejected;
+  @HiveField(27)
   final String? Narration;
+
   ChequeDetailModel({
     this.id,
     this.LedgerName,

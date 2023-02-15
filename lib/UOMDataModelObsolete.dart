@@ -2,10 +2,9 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+part 'UOMDataModelObsolete.g.dart';
 
-
-
-@HiveType(typeId: 31)
+@HiveType(typeId: 13)
 class UOMHiveMOdel extends HiveObject with EquatableMixin {
   @HiveField(0)
   int? UOM_id;

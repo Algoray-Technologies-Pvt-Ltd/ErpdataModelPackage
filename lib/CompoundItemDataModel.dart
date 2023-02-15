@@ -1,18 +1,20 @@
 import 'dart:convert';
 
+import 'package:datamodelpackage/InventoryItemHive.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'CompoundItemDataModel.g.dart';
 
-// import '../Accounts/LedgerMasterDataModel.dart';
-import 'InventoryItemDataModel.dart';
-
-class CompoundItemDataModel extends Equatable {
-  final InventoryItemDataModel BaseItem;
+@HiveType(typeId: 5)
+class CompoundItemDataModel extends HiveObject with EquatableMixin {
+  @HiveField(0)
+  final InventoryItemHive BaseItem;
   CompoundItemDataModel({
     required this.BaseItem,
   });
 
   CompoundItemDataModel copyWith({
-    InventoryItemDataModel? BaseItem,
+    InventoryItemHive? BaseItem,
   }) {
     return CompoundItemDataModel(
       BaseItem: BaseItem ?? this.BaseItem,
@@ -27,7 +29,7 @@ class CompoundItemDataModel extends Equatable {
 
   factory CompoundItemDataModel.fromMap(Map<String, dynamic> map) {
     return CompoundItemDataModel(
-      BaseItem: InventoryItemDataModel.fromMap(map['BaseItem']),
+      BaseItem: InventoryItemHive.fromMap(map['BaseItem']),
     );
   }
 
@@ -54,17 +56,17 @@ class CompoundItemDataModel extends Equatable {
 
   Map<String, dynamic> toMapForTransTest() {
     return {
-      'BaseItem': BaseItem.toMapForTransTest(),
+      'BaseItem': BaseItem.toMap(),
     };
   }
 
   factory CompoundItemDataModel.fromMapForTransTest(Map<String, dynamic>? map) {
     print('Inv Conv : $map');
     if (map == null)
-      return CompoundItemDataModel(BaseItem: InventoryItemDataModel());
+      return CompoundItemDataModel(BaseItem: InventoryItemHive());
 
     return CompoundItemDataModel(
-      BaseItem: InventoryItemDataModel.fromMapForTransTest(map['BaseItem']),
+      BaseItem: InventoryItemHive.fromMap(map['BaseItem']),
     );
   }
 }

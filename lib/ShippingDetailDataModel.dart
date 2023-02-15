@@ -1,26 +1,44 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'ShippingDetailDataModel.g.dart';
 
-class ShippingDetailDataModel extends Equatable {
+@HiveType(typeId: 12)
+class ShippingDetailDataModel extends HiveObject with EquatableMixin {
+  @HiveField(0)
   final String? deliveredBy;
+  @HiveField(1)
   final String? vehicleId;
+  @HiveField(2)
   final String? vehicleName;
+  @HiveField(3)
   final String? description;
+  @HiveField(4)
   final String? driverName;
+  @HiveField(5)
   final String? driverPhone;
-  final String? shippingCompany; // voucher only
-  final String? shippingCompanyTrn; // voucher only
-  final String? billingAddress; // ledger
+  @HiveField(6)
+  final String? shippingCompany;
+
+  @HiveField(7)
+  final String? shippingCompanyTrn;
+  @HiveField(8)
+  final String? billingAddress;
+  @HiveField(9)
   final String? capacity;
+  @HiveField(10)
   final double? ratePerKm;
+  @HiveField(11)
   final double? shippingCharges;
 
-  // log only
-
+  @HiveField(12)
   final DateTime? inTime;
+  @HiveField(13)
   final DateTime? outTime;
+  @HiveField(14)
   final double? unloadedWeight;
+  @HiveField(15)
   final double? loadedWeight;
   ShippingDetailDataModel({
     this.deliveredBy,

@@ -1,24 +1,44 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'BillwiseMappingModel.g.dart';
 
-class BillwiseMappingModel extends Equatable {
+@HiveType(typeId: 2)
+class BillwiseMappingModel extends HiveObject with EquatableMixin {
+  @HiveField(0)
   final String? VoucherPrefix;
+  @HiveField(1)
   final String? VoucherType;
+  @HiveField(2)
   final String? VoucherNo;
+  @HiveField(3)
   final String? LedgerID;
+  @HiveField(4)
   final String? RefPrefix;
+  @HiveField(5)
   final String? RefType;
+  @HiveField(6)
   final String? RefVoucherNo;
+  @HiveField(7)
   final String? MethodOfAdjustment;
+  @HiveField(8)
   final double? DebitAmount = 0;
+  @HiveField(9)
   final double? CreditAmount = 0;
+  @HiveField(10)
   final DateTime? VoucherDate;
+  @HiveField(11)
   final DateTime? DueDate;
+  @HiveField(12)
   final double? Amount;
+  @HiveField(13)
   final double? selectedAmount;
+  @HiveField(14)
   final bool? mapFlag;
+  @HiveField(15)
   final int? pos;
+  @HiveField(16)
   final int? salesManId;
   BillwiseMappingModel({
     this.VoucherPrefix,

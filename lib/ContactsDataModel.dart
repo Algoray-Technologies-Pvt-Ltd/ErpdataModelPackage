@@ -1,37 +1,68 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'ContactsDataModel.g.dart';
 
-class ContactsDataModelOLD extends Equatable {
+@HiveType(typeId: 6)
+class ContactsDataModel extends HiveObject implements EquatableMixin {
+  @HiveField(0)
   final int? id = 0;
+  @HiveField(1)
   final String? addressId = "";
+  @HiveField(2)
   final String? ContactName;
+  @HiveField(3)
   final String? ContactUuid;
+  @HiveField(4)
   final String? PhoneNumber;
+  @HiveField(5)
   final String? email;
+  @HiveField(6)
   final String? address;
+  @HiveField(7)
   final String? route;
+  @HiveField(8)
   final String? code;
+  @HiveField(9)
   final String? city;
+  @HiveField(10)
   final String? country;
+  @HiveField(11)
   final String? ledgerId;
+  @HiveField(12)
   final String? CompanyName;
+  @HiveField(13)
   final String? location;
+  @HiveField(14)
   final String? EmployeeId;
+  @HiveField(15)
   final DateTime? DateOfBirth;
+  @HiveField(16)
   final String? mobileNumber;
+  @HiveField(17)
   final String? notes;
+  @HiveField(18)
   final String? Designation;
+  @HiveField(19)
   final String? DesignationID;
+  @HiveField(20)
   final String? Building;
+  @HiveField(21)
   final bool? isCompanyEmployee;
+  @HiveField(22)
   final bool? isIndividual;
+  @HiveField(23)
   final int? Type;
+  @HiveField(24)
   final String? POBox;
+  @HiveField(25)
   final String? Street;
+  @HiveField(26)
   final String? Fax;
+  @HiveField(27)
   List<String> LocationDetails;
-  ContactsDataModelOLD({
+  ContactsDataModel({
     this.ContactName,
     this.ContactUuid,
     this.PhoneNumber,
@@ -62,7 +93,7 @@ class ContactsDataModelOLD extends Equatable {
   final bool? isActive = false;
   final double? deliveryCharges = 0;
 
-  ContactsDataModelOLD copyWith({
+  ContactsDataModel copyWith({
     String? ContactName,
     String? ContactUuid,
     String? PhoneNumber,
@@ -90,7 +121,7 @@ class ContactsDataModelOLD extends Equatable {
     String? Fax,
     List<String>? LocationDetails,
   }) {
-    return ContactsDataModelOLD(
+    return ContactsDataModel(
       ContactName: ContactName ?? this.ContactName,
       ContactUuid: ContactUuid ?? this.ContactUuid,
       PhoneNumber: PhoneNumber ?? this.PhoneNumber,
@@ -151,8 +182,8 @@ class ContactsDataModelOLD extends Equatable {
     };
   }
 
-  factory ContactsDataModelOLD.fromMap(Map<String, dynamic> map) {
-    return ContactsDataModelOLD(
+  factory ContactsDataModel.fromMap(Map<String, dynamic> map) {
+    return ContactsDataModel(
       ContactName: map['ContactName'],
       ContactUuid: map['ContactUuid'],
       PhoneNumber: map['PhoneNumber'],
@@ -186,12 +217,12 @@ class ContactsDataModelOLD extends Equatable {
 
   String toJson() => json.encode(toMap());
 
-  factory ContactsDataModelOLD.fromJson(String source) =>
-      ContactsDataModelOLD.fromMap(json.decode(source));
+  factory ContactsDataModel.fromJson(String source) =>
+      ContactsDataModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'ContactsDataModelOLD(ContactName: $ContactName, ContactUuid: $ContactUuid, PhoneNumber: $PhoneNumber, email: $email, address: $address, route: $route, code: $code, city: $city, country: $country, ledgerId: $ledgerId, CompanyName: $CompanyName, location: $location, EmployeeId: $EmployeeId, DateOfBirth: $DateOfBirth, mobileNumber: $mobileNumber, notes: $notes, Designation: $Designation, DesignationID: $DesignationID, Building: $Building, isCompanyEmployee: $isCompanyEmployee, isIndividual: $isIndividual, Type: $Type, POBox: $POBox, Street: $Street, Fax: $Fax, LocationDetails: $LocationDetails)';
+    return 'ContactsDataModel(ContactName: $ContactName, ContactUuid: $ContactUuid, PhoneNumber: $PhoneNumber, email: $email, address: $address, route: $route, code: $code, city: $city, country: $country, ledgerId: $ledgerId, CompanyName: $CompanyName, location: $location, EmployeeId: $EmployeeId, DateOfBirth: $DateOfBirth, mobileNumber: $mobileNumber, notes: $notes, Designation: $Designation, DesignationID: $DesignationID, Building: $Building, isCompanyEmployee: $isCompanyEmployee, isIndividual: $isIndividual, Type: $Type, POBox: $POBox, Street: $Street, Fax: $Fax, LocationDetails: $LocationDetails)';
   }
 
   @override
@@ -225,4 +256,7 @@ class ContactsDataModelOLD extends Equatable {
       LocationDetails,
     ];
   }
+
+  @override
+  bool? get stringify => throw UnimplementedError();
 }

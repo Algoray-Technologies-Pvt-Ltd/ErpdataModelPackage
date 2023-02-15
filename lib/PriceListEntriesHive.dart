@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
-// part 'PriceListEntriesHive.g.dart';
+part 'PriceListEntriesHive.g.dart';
 
-@HiveType(typeId: 42)
+@HiveType(typeId: 11)
 class PriceListEntriesHive extends HiveObject with EquatableMixin {
   // @HiveField(0)
   // String priceListName;

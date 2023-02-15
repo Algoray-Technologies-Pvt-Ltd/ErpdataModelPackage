@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
-// part 'LedMasterHiveModel.g.dart';
+part 'LedgerMasterHiveModel.g.dart';
 
-@HiveType(typeId: 21)
+@HiveType(typeId: 10)
 class LedgerMasterHiveModel extends HiveObject with EquatableMixin {
   @HiveField(0)
   String? LEDGER_ID;

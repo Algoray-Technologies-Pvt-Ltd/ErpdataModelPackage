@@ -6,9 +6,9 @@ import 'package:datamodelpackage/UOMDataModelObsolete.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
-// part 'InvetoryItemDataModel.g.dart';
+ part 'InventoryItemHive.g.dart';
 
-@HiveType(typeId: 11)
+@HiveType(typeId: 9)
 class InventoryItemHive extends HiveObject with EquatableMixin {
   @HiveField(0)
   String? Item_ID;
