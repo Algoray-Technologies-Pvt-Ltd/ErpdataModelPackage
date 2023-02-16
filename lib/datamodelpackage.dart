@@ -8,7 +8,7 @@ import 'package:datamodelpackage/LedgerMasterHiveModel.dart';
 import 'package:datamodelpackage/ShippingDetailDataModel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
-part 'GeneralVoucherDataModel.g.dart';
+part 'datamodelpackage.g.dart';
 
 @HiveType(typeId: 7)
 class GeneralVoucherDataModel extends HiveObject with EquatableMixin {
