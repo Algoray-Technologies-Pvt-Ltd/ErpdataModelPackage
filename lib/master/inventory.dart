@@ -5,8 +5,6 @@ import 'package:datamodelpackage/master/UOMDataModelObsolete.dart';
 import 'package:datamodelpackage/master/itemgodowndatamodel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
-part '../inventory.g.dart';
-
 part 'inventory.g.dart';
 
 @HiveType(typeId: 14)
