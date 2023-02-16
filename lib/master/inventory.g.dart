@@ -6,18 +6,17 @@ part of 'inventory.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class InventoryItemDataModelAdapter
-    extends TypeAdapter<InventoryItemDataModel> {
+class InventoryItemDataAdapter extends TypeAdapter<InventoryItemData> {
   @override
   final int typeId = 14;
 
   @override
-  InventoryItemDataModel read(BinaryReader reader) {
+  InventoryItemData read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return InventoryItemDataModel(
+    return InventoryItemData(
       ItemNameArabic: fields[1] as String?,
       stdRate: fields[2] as double?,
       rate: fields[3] as double?,
@@ -88,7 +87,7 @@ class InventoryItemDataModelAdapter
   }
 
   @override
-  void write(BinaryWriter writer, InventoryItemDataModel obj) {
+  void write(BinaryWriter writer, InventoryItemData obj) {
     writer
       ..writeByte(66)
       ..writeByte(1)
@@ -231,7 +230,7 @@ class InventoryItemDataModelAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InventoryItemDataModelAdapter &&
+      other is InventoryItemDataAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

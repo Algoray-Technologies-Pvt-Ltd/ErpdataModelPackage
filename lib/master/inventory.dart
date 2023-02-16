@@ -1,15 +1,16 @@
 import 'dart:convert';
-import 'package:datamodelpackage/BOMDataModel.dart';
-import 'package:datamodelpackage/BatchDataModel.dart';
-import 'package:datamodelpackage/ItemGodownDataModel.dart';
-import 'package:datamodelpackage/UOMDataModelObsolete.dart';
+import 'package:datamodelpackage/master/BOMDataModel.dart';
+import 'package:datamodelpackage/master/BatchDataModel.dart';
+import 'package:datamodelpackage/master/UOMDataModelObsolete.dart';
+import 'package:datamodelpackage/master/itemgodowndatamodel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
-import 'package:uuid/uuid.dart';
+part '../inventory.g.dart';
+
 part 'inventory.g.dart';
 
 @HiveType(typeId: 14)
-class InventoryItemDataModel extends HiveObject with EquatableMixin {
+class InventoryItemData extends HiveObject with EquatableMixin {
   @HiveField(1)
   final String? ItemNameArabic;
   @HiveField(2)
@@ -142,7 +143,7 @@ class InventoryItemDataModel extends HiveObject with EquatableMixin {
   final DateTime? manufactureDate;
   @HiveField(66)
   final DateTime? expiry;
-  InventoryItemDataModel({
+  InventoryItemData({
     this.ItemNameArabic,
     this.stdRate,
     this.rate = 0,
@@ -211,7 +212,7 @@ class InventoryItemDataModel extends HiveObject with EquatableMixin {
     this.weight = 0,
   });
 
-  InventoryItemDataModel copyWith({
+  InventoryItemData copyWith({
     String? ItemName,
     String? ItemNameArabic,
     String? GroupName,
@@ -319,7 +320,7 @@ class InventoryItemDataModel extends HiveObject with EquatableMixin {
     String? location,
     double? weight,
   }) {
-    return InventoryItemDataModel(
+    return InventoryItemData(
       ItemNameArabic: ItemNameArabic ?? this.ItemNameArabic,
       stdRate: rate ?? this.stdRate,
       rate: rate ?? this.rate,
@@ -464,8 +465,8 @@ class InventoryItemDataModel extends HiveObject with EquatableMixin {
     };
   }
 
-  factory InventoryItemDataModel.fromMap(Map<String, dynamic> map) {
-    return InventoryItemDataModel(
+  factory InventoryItemData.fromMap(Map<String, dynamic> map) {
+    return InventoryItemData(
       ItemNameArabic: map['ItemNameArabic'],
       stdRate: map['price']?.toDouble(),
       rate: map['price']?.toDouble(),
@@ -545,8 +546,8 @@ class InventoryItemDataModel extends HiveObject with EquatableMixin {
 
   String toJson() => json.encode(toMap());
 
-  factory InventoryItemDataModel.fromJson(String source) =>
-      InventoryItemDataModel.fromMap(json.decode(source));
+  factory InventoryItemData.fromJson(String source) =>
+      InventoryItemData.fromMap(json.decode(source));
 
   @override
   List<Object?> get props {

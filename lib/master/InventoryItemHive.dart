@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:datamodelpackage/PriceListEntriesHive.dart';
-import 'package:datamodelpackage/UOMDataModelObsolete.dart';
+import 'package:datamodelpackage/master/PriceListEntriesHive.dart';
+import 'package:datamodelpackage/master/UOMDataModelObsolete.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
- part 'InventoryItemHive.g.dart';
+part 'InventoryItemHive.g.dart';
 
 @HiveType(typeId: 9)
 class InventoryItemHive extends HiveObject with EquatableMixin {

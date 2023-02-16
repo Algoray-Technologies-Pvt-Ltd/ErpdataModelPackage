@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:datamodelpackage/InventoryItemHive.dart';
+import 'package:datamodelpackage/master/InventoryItemHive.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 part 'CompoundItemDataModel.g.dart';
