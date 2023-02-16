@@ -1,4 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
+import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+
 import 'package:datamodelpackage/BillwiseMappingModel.dart';
 import 'package:datamodelpackage/ChequeDetailModel.dart';
 import 'package:datamodelpackage/CompoundItemDataModel.dart';
@@ -6,9 +11,15 @@ import 'package:datamodelpackage/ContactsDataModel.dart';
 import 'package:datamodelpackage/InventoryItemHive.dart';
 import 'package:datamodelpackage/LedgerMasterHiveModel.dart';
 import 'package:datamodelpackage/ShippingDetailDataModel.dart';
-import 'package:equatable/equatable.dart';
-import 'package:hive/hive.dart';
+
 part 'datamodelpackage.g.dart';
+
+class Deeo {
+  String deeo;
+  Deeo({
+    required this.deeo,
+  });
+}
 
 @HiveType(typeId: 7)
 class GeneralVoucherDataModel extends HiveObject with EquatableMixin {
